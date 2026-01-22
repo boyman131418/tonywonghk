@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王致生 Tony Wong | 灣區築橋者 - 生態架構師</title>
+    <meta name="description" content="王致生，大灣區生態架構師。從香港、肇慶到珠海，打造跨越伶仃洋的生態之橋。專注跨境服務、數位化轉型與文化創意產業。">
+    <meta name="author" content="王致生 Tony Wong">
+    <meta name="keywords" content="王致生, Tony Wong, 大灣區, 珠海, 企業家, 星脈聯盟, 視覺方舟, 美思未來">
+    
+    <meta property="og:title" content="王致生 Tony Wong | 灣區築橋者">
+    <meta property="og:description" content="從擺渡人到架構師，跨越伶仃洋的生態之橋">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy-900: #0d1829;
+            --navy-800: #162033;
+            --navy-700: #1f2d45;
+            --navy-600: #2d3f5e;
+            --navy-400: #6b7fa3;
+            --navy-300: #8fa3c4;
+            --navy-200: #b3c3db;
+            --gold-400: #e5b84c;
+            --gold-500: #d4a73a;
+            --gold-600: #c4972a;
+            --background: #f5f6f8;
+            --foreground: #1a2438;
+            --card: #ffffff;
+            --muted: #6b7a94;
+            --accent: #e5a91a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Serif SC', system-ui, sans-serif;
+            background: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Noto Serif SC', 'Inter', serif;
+            font-weight: 600;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(13, 24, 41, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 184, 76, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            color: var(--gold-400);
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--navy-300);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-400);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d1829 0%, #1a2b42 50%, #243550 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 1.5rem 4rem;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 5rem;
+            left: 2rem;
+            width: 18rem;
+            height: 18rem;
+            background: rgba(229, 184, 76, 0.1);
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 5rem;
+            right: 2rem;
+            width: 24rem;
+            height: 24rem;
+            background: rgba(229, 184, 76, 0.05);
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            color: var(--gold-400);
+            background: rgba(229, 184, 76, 0.1);
+            border: 1px solid rgba(229, 184, 76, 0.2);
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            color: #f5f6f8;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero h1 span {
+            display: block;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--gold-400);
+            margin-top: 0.75rem;
+        }
+        
+        .hero-text {
+            font-size: 1.25rem;
+            color: var(--navy-200);
+            margin-bottom: 2rem;
+            max-width: 32rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn-primary {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #e5b84c 0%, #d4a73a 50%, #c4972a 100%);
+            color: var(--navy-900);
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px -4px rgba(229, 184, 76, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            padding: 1rem 2rem;
+            border: 2px solid rgba(229, 184, 76, 0.3);
+            color: var(--gold-400);
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(229, 184, 76, 0.1);
+        }
+        
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero-image-wrapper {
+            position: relative;
+            width: 22rem;
+            height: 22rem;
+        }
+        
+        .hero-image-ring {
+            position: absolute;
+            inset: 0;
+            border: 2px solid rgba(229, 184, 76, 0.3);
+            border-radius: 50%;
+            animation: pulse-gold 3s infinite;
+        }
+        
+        .hero-image-ring-2 {
+            position: absolute;
+            inset: -1rem;
+            border: 1px solid rgba(229, 184, 76, 0.1);
+            border-radius: 50%;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 50%;
+            border: 4px solid rgba(229, 184, 76, 0.4);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        @keyframes pulse-gold {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Section Common */
+        .section {
+            padding: 6rem 1.5rem;
+        }
+        
+        .section-dark {
+            background: var(--navy-900);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-label {
+            font-size: 0.875rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title-light {
+            color: #f5f6f8;
+        }
+        
+        .text-gold {
+            background: linear-gradient(135deg, #e5b84c 0%, #d4a73a 50%, #c4972a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-desc {
+            color: var(--muted);
+            max-width: 40rem;
+            margin: 0 auto;
+        }
+        
+        .section-desc-light {
+            color: var(--navy-300);
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 32rem;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .about-image-overlay {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 0.75rem;
+            padding: 1rem;
+        }
+        
+        .about-image-overlay p:first-child {
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+        
+        .about-image-overlay p:last-child {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content p {
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        
+        .about-stat {
+            text-align: center;
+        }
+        
+        .about-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .about-stat-label {
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+        
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(229, 184, 76, 0.5) 0%, rgba(229, 184, 76, 0.3) 50%, rgba(229, 184, 76, 0.5) 100%);
+            display: none;
+        }
+        
+        .timeline-phase {
+            margin-bottom: 4rem;
+        }
+        
+        .timeline-card {
+            background: rgba(22, 32, 51, 0.5);
+            border: 1px solid rgba(229, 184, 76, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .timeline-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .timeline-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        
+        .timeline-icon-1 { background: linear-gradient(135deg, #2d3f5e, #1f2d45); }
+        .timeline-icon-2 { background: linear-gradient(135deg, #d4a73a, #c4972a); }
+        .timeline-icon-3 { background: linear-gradient(135deg, #e5a91a, #d4a73a); }
+        
+        .timeline-period {
+            font-size: 0.875rem;
+            color: var(--gold-400);
+        }
+        
+        .timeline-title {
+            font-size: 1.25rem;
+            color: #f5f6f8;
+        }
+        
+        .timeline-subtitle {
+            color: var(--navy-300);
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .timeline-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .timeline-year {
+            flex-shrink: 0;
+            width: 3.5rem;
+            text-align: right;
+            color: var(--gold-400);
+            font-weight: 600;
+        }
+        
+        .timeline-divider {
+            width: 1px;
+            background: rgba(229, 184, 76, 0.3);
+            flex-shrink: 0;
+        }
+        
+        .timeline-event {
+            color: #f5f6f8;
+            font-weight: 500;
+        }
+        
+        .timeline-desc {
+            color: var(--navy-400);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Business Section */
+        .business-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .business-images img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s;
+        }
+        
+        .business-images img:hover {
+            transform: scale(1.03);
+        }
+        
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .business-card {
+            background: var(--card);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .business-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .business-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .business-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--navy-900);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        
+        .business-category {
+            font-size: 0.75rem;
+            color: var(--accent);
+            background: rgba(229, 169, 26, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+        }
+        
+        .business-name {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .business-year {
+            font-size: 0.875rem;
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+        }
+        
+        .business-desc {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        
+        /* Charity Section */
+        .charity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .charity-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .charity-icon-wrapper {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(229, 184, 76, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .charity-content h2 {
+            font-size: 2.5rem;
+            color: #f5f6f8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .charity-content > p {
+            color: var(--navy-300);
+            margin-bottom: 2.5rem;
+        }
+        
+        .charity-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .charity-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(22, 32, 51, 0.5);
+            border: 1px solid rgba(229, 184, 76, 0.1);
+            border-radius: 0.75rem;
+            transition: transform 0.3s;
+        }
+        
+        .charity-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .charity-item-icon {
+            width: 3rem;
+            height: 3rem;
+            background: rgba(229, 184, 76, 0.1);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .charity-item h3 {
+            font-size: 1.125rem;
+            color: #f5f6f8;
+            margin-bottom: 0.25rem;
+        }
+        
+        .charity-item p {
+            font-size: 0.875rem;
+            color: var(--navy-400);
+        }
+        
+        .charity-image {
+            position: relative;
+        }
+        
+        .charity-image img {
+            width: 100%;
+            height: 32rem;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .charity-float {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1.5rem;
+            background: linear-gradient(135deg, #e5b84c 0%, #d4a73a 50%, #c4972a 100%);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px -4px rgba(229, 184, 76, 0.3);
+        }
+        
+        .charity-float p:first-child {
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: var(--navy-900);
+        }
+        
+        .charity-float p:last-child {
+            font-size: 0.875rem;
+            color: var(--navy-700);
+        }
+        
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+            transition: transform 0.7s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--navy-900);
+        }
+        
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+        
+        .contact-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(22, 32, 51, 0.3);
+            border: 1px solid rgba(229, 184, 76, 0.1);
+            border-radius: 1rem;
+            transition: transform 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .contact-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: rgba(229, 184, 76, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.125rem;
+            color: #f5f6f8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card-content {
+            color: var(--gold-400);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-card-subtitle {
+            font-size: 0.875rem;
+            color: var(--navy-400);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(229, 184, 76, 0.1);
+        }
+        
+        .footer p:first-child {
+            color: var(--navy-400);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer p:last-child {
+            color: rgba(229, 184, 76, 0.6);
+            font-size: 0.75rem;
+            font-style: italic;
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            
+            .hero-container,
+            .about-grid,
+            .charity-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero h1 { font-size: 3rem; }
+            .hero h1 span { font-size: 1.5rem; }
+            
+            .hero-image-wrapper {
+                width: 16rem;
+                height: 16rem;
+                margin: 0 auto;
+            }
+            
+            .hero-image { order: -1; }
+            .hero-text-content { text-align: center; }
+            .hero-buttons { justify-content: center; }
+            
+            .business-grid,
+            .contact-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .business-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-line { display: none; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            
+            .business-grid,
+            .gallery-grid,
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .charity-float {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">王致生</a>
+            <ul class="nav-links">
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#timeline">發展歷程</a></li>
+                <li><a href="#business">商業版圖</a></li>
+                <li><a href="#charity">社會責任</a></li>
+                <li><a href="#contact">聯繫</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text-content">
+                <span class="hero-badge">灣區築橋者 · Bay Area Bridge Builder</span>
+                <h1>王致生<span>Tony Wong</span></h1>
+                <p class="hero-text">從擺渡人到架構師，跨越伶仃洋的生態之橋</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn-primary">認識我</a>
+                    <a href="#timeline" class="btn-secondary">事業歷程</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-ring"></div>
+                    <div class="hero-image-ring-2"></div>
+                    <img src="images/tony-2.jpeg" alt="王致生 Tony Wong">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/tony-4.jpeg" alt="王致生 - 企業家">
+                    <div class="about-image-overlay">
+                        <p>創業歷程</p>
+                        <p class="text-gold">15+ 年</p>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-label">關於我</span>
+                    <h2>生態架構師<span class="text-gold">的使命</span></h2>
+                    <p>自2010年起，我的創業旅程是一部緊握大灣區時代脈搏的進化史。從香港出發，在肇慶深耕實業，最終將事業版圖的戰略核心與「築橋者」的宏圖，紮根於珠海。</p>
+                    <p>我立志成為的標竿，並非財富的規模，而是一種可持續的生態模式。通過深度服務、產業賦能與系統架構，超越簡單的中介角色，成為促進區域協同、降低交易成本的「新型基礎設施」。</p>
+                    <p>從服務個人與企業的「擺渡人」起步，最終成長為設計並運營整個跨境創新網絡的「架構師」。這座以珠海為核心、跨越伶仃洋的生態之橋，正是不斷生長的灣區精神的最佳註腳。</p>
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <p class="about-stat-number text-gold">6+</p>
+                            <p class="about-stat-label">企業創立</p>
+                        </div>
+                        <div class="about-stat">
+                            <p class="about-stat-number text-gold">3</p>
+                            <p class="about-stat-label">核心城市</p>
+                        </div>
+                        <div class="about-stat">
+                            <p class="about-stat-number text-gold">2025</p>
+                            <p class="about-stat-label">星脈聯盟</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" style="color: var(--gold-400);">發展歷程</span>
+                <h2 class="section-title section-title-light">三階段 <span class="text-gold">躍遷</span></h2>
+                <p class="section-desc section-desc-light">從服務積累到多元佈局，再到生態架構，每一步都是對灣區未來的深刻洞察</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <!-- Phase 1 -->
+                <div class="timeline-phase">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-icon timeline-icon-1">🏛️</div>
+                            <div>
+                                <span class="timeline-period">2010-2017</span>
+                                <h3 class="timeline-title">服務築基</h3>
+                                <p class="timeline-subtitle">積累信任資本與實體服務經驗</p>
+                            </div>
+                        </div>
+                        <div class="timeline-items">
+                            <div class="timeline-item">
+                                <span class="timeline-year">2010</span>
+                                <div class="timeline-divider"></div>
+                                <div>
+                                    <p class="timeline-event">創辦萬年移民有限公司</p>
+                                    <p class="timeline-desc">深耕肇慶，專注跨境服務</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2014</span>
+                                <div class="timeline-divider"></div>
+                                <div>
+                                    <p class="timeline-event">拓展IT服務業務</p>
+                                    <p class="timeline-desc">熟悉傳統企業數位化痛點</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2017</span>
+                                <div class="timeline-divider"></div>
+                                <div>
+                                    <p class="timeline-event">收購金門旅遊</p>
+                                    <p class="timeline-desc">獲取成熟品牌與高端服務網絡</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div class="timeline-phase">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-icon timeline-icon-2">🚀</div>
+                            <div>
+                                <span class="timeline-period">2018-2024</span>
+                                <h3 class="timeline-title">多元佈局</h3>
+                                <p class="timeline-subtitle">將服務能力產品化，佈局科技與文化賽道</p>
+                            </div>
+                        </div>
+                        <div class="timeline-items">
+                            <div class="timeline-item">
+                                <span class="timeline-year">2018</span>
+                                <div class="timeline-divider"></div>
+                                <div>
+                                    <p class="timeline-event">成立美思未來</p>
+                                    <p class="timeline-desc">數位化轉型解決方案</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2024</span>
+                                <div class="timeline-divider"></div>
+                                <div>
+                                    <p class="timeline-event">成立世一娛樂</p>
+                                    <p class="timeline-desc">佈局青年潮流文化</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div class="timeline-phase">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div class="timeline-icon timeline-icon-3">🌐</div>
+                            <div>
+                                <span class="timeline-period">2024-2025</span>
+                                <h3 class="timeline-title">生態架構</h3>
+                                <p class="timeline-subtitle">完成業務板塊的戰略協同與頂層生態設計</p>
+                            </div>
+                        </div>
+                        <div class="timeline-items">
+                            <div class="timeline-item">
+                                <span class="timeline-year">2024</span>
+                                <div class="timeline-divider"></div>
+                                <div>
+                                    <p class="timeline-event">戰略落子珠海</p>
+                                    <p class="timeline-desc">設立事業總樞紐</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2025</span>
+                                <div class="timeline-divider"></div>
+                                <div>
+                                    <p class="timeline-event">成立視覺方舟</p>
+                                    <p class="timeline-desc">VR/AR沉浸式體驗項目</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2025</span>
+                                <div class="timeline-divider"></div>
+                                <div>
+                                    <p class="timeline-event">創辦星脈聯盟</p>
+                                    <p class="timeline-desc">高端資源平台，成為生態架構師</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Section -->
+    <section id="business" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">商業版圖</span>
+                <h2 class="section-title">多元 <span class="text-gold">生態矩陣</span></h2>
+                <p class="section-desc">跨科技、文旅、文娛的商業矩陣，從經營自己生意的「商人」，徹底轉變為設計合作規則、調度區域資源的「生態架構師」</p>
+            </div>
+            
+            <div class="business-images">
+                <img src="images/tony-3.jpeg" alt="商業活動 1">
+                <img src="images/tony-4.jpeg" alt="商業活動 2">
+                <img src="images/tony-5.jpeg" alt="商業活動 3">
+            </div>
+            
+            <div class="business-grid">
+                <div class="business-card">
+                    <div class="business-card-header">
+                        <div class="business-icon">🏛️</div>
+                        <span class="business-category">跨境服務</span>
+                    </div>
+                    <h3 class="business-name">萬年移民</h3>
+                    <p class="business-year">2010年成立</p>
+                    <p class="business-desc">為粵港澳高淨值家庭提供頂級的移民規劃與跨境財富管理服務</p>
+                </div>
+                
+                <div class="business-card">
+                    <div class="business-card-header">
+                        <div class="business-icon">✈️</div>
+                        <span class="business-category">文旅服務</span>
+                    </div>
+                    <h3 class="business-name">金門旅遊</h3>
+                    <p class="business-year">創立於 1972，2017年收購</p>
+                    <p class="business-desc">成熟品牌與高端客戶服務經驗，實體服務網絡</p>
+                </div>
+                
+                <div class="business-card">
+                    <div class="business-card-header">
+                        <div class="business-icon">💻</div>
+                        <span class="business-category">科技賦能</span>
+                    </div>
+                    <h3 class="business-name">美思未來</h3>
+                    <p class="business-year">2018年成立</p>
+                    <p class="business-desc">為大灣區企業提供數位化轉型解決方案，從項目服務商轉變為科技夥伴</p>
+                </div>
+                
+                <div class="business-card">
+                    <div class="business-card-header">
+                        <div class="business-icon">✨</div>
+                        <span class="business-category">文化創意</span>
+                    </div>
+                    <h3 class="business-name">世一娛樂</h3>
+                    <p class="business-year">2024年成立</p>
+                    <p class="business-desc">致力於青年潮流文化，為商業生態注入品牌活力與內容創造力</p>
+                </div>
+                
+                <div class="business-card">
+                    <div class="business-card-header">
+                        <div class="business-icon">👁️</div>
+                        <span class="business-category">前沿科技</span>
+                    </div>
+                    <h3 class="business-name">視覺方舟</h3>
+                    <p class="business-year">2025年成立</p>
+                    <p class="business-desc">運用VR/AR、數位孿生等技術，打造前沿的沉浸式體驗項目</p>
+                </div>
+                
+                <div class="business-card">
+                    <div class="business-card-header">
+                        <div class="business-icon">👥</div>
+                        <span class="business-category">生態平台</span>
+                    </div>
+                    <h3 class="business-name">星脈聯盟</h3>
+                    <p class="business-year">2025年成立</p>
+                    <p class="business-desc">聚合兩地企業家、投資人與專家的高端資源平台，以「課題制」推動跨境合作</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charity Section -->
+    <section id="charity" class="section section-dark">
+        <div class="container">
+            <div class="charity-grid">
+                <div class="charity-content">
+                    <div class="charity-header">
+                        <div class="charity-icon-wrapper">❤️</div>
+                        <span class="section-label" style="color: var(--gold-400); margin: 0;">回饋社會</span>
+                    </div>
+                    <h2>人心相通<span class="text-gold" style="display: block; margin-top: 0.5rem;">築橋理念</span></h2>
+                    <p>我的慈善事業，緊密圍繞「築橋」理念展開。這一切，旨在為商業生態奠定最深厚的社會根基——讓人與人之間的心靈相通。</p>
+                    
+                    <div class="charity-items">
+                        <div class="charity-item">
+                            <div class="charity-item-icon">💻</div>
+                            <div>
+                                <h3>數位包容計劃</h3>
+                                <p>賦能傳統行業，推動中小企業數位化轉型</p>
+                            </div>
+                        </div>
+                        <div class="charity-item">
+                            <div class="charity-item-icon">👥</div>
+                            <div>
+                                <h3>跨境青年創想營</h3>
+                                <p>培育未來人才，促進粵港澳青年交流與創業</p>
+                            </div>
+                        </div>
+                        <div class="charity-item">
+                            <div class="charity-item-icon">🏛️</div>
+                            <div>
+                                <h3>文化遺產數位重生</h3>
+                                <p>運用科技保護與傳承嶺南文化遺產，促進文化認同</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="charity-image">
+                    <img src="images/tony-6.jpeg" alt="王致生 - 慈善活動">
+                    <div class="charity-float">
+                        <p>築橋</p>
+                        <p>連接心與心</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">活動剪影</span>
+                <h2 class="section-title">精彩 <span class="text-gold">瞬間</span></h2>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/tony-7.jpeg" alt="活動照片 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/tony-8.jpeg" alt="活動照片 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" style="color: var(--gold-400);">聯繫我</span>
+                <h2 class="section-title section-title-light">共建 <span class="text-gold">灣區未來</span></h2>
+                <p class="section-desc section-desc-light">期待與您攜手，在大灣區這片熱土上創造更多可能</p>
+            </div>
+            
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>辦公地點</h3>
+                    <p class="contact-card-content">珠海市</p>
+                    <p class="contact-card-subtitle">大灣區戰略核心</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>電子郵件</h3>
+                    <p class="contact-card-content">contact@tonywong.com</p>
+                    <p class="contact-card-subtitle">商務合作洽談</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🌐</div>
+                    <h3>業務覆蓋</h3>
+                    <p class="contact-card-content">香港 · 肇慶 · 珠海</p>
+                    <p class="contact-card-subtitle">跨境服務網絡</p>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>© 2025 王致生 Tony Wong. All rights reserved.</p>
+                <p>「從擺渡人到架構師，跨越伶仃洋的生態之橋」</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
