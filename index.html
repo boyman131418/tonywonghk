@@ -857,6 +857,185 @@
                 margin-top: 1rem;
             }
         }
+
+        /* Announcement Section Styles */
+        .announcement-section {
+            background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+            border-top: 1px solid rgba(229, 184, 76, 0.2);
+        }
+
+        .announcement-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(229, 184, 76, 0.15);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .announcement-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(229, 184, 76, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .announcement-date {
+            color: var(--gold-400);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .announcement-title {
+            color: #fff;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .announcement-content {
+            color: var(--navy-300);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .announcement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Edit Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--navy-800);
+            border: 1px solid rgba(229, 184, 76, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            color: var(--gold-400);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--navy-300);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            color: var(--navy-200);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(229, 184, 76, 0.2);
+            border-radius: 0.5rem;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold-400);
+        }
+
+        .form-textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .btn-save {
+            background: linear-gradient(135deg, var(--gold-500), var(--gold-600));
+            color: var(--navy-900);
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(229, 184, 76, 0.3);
+        }
+
+        .existing-announcements {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(229, 184, 76, 0.2);
+        }
+
+        .existing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-delete {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: none;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .btn-delete:hover {
+            background: rgba(239, 68, 68, 0.3);
+        }
     </style>
   <meta property="og:title" content="王致生 Tony Wong | 灣區築橋者 - 生態架構師">
   <meta name="twitter:title" content="王致生 Tony Wong | 灣區築橋者 - 生態架構師">
@@ -1210,6 +1389,45 @@
         </div>
     </section>
 
+    <!-- Announcement Section -->
+    <section class="section announcement-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" style="color: var(--gold-400);">最新動態</span>
+                <h2 class="section-title section-title-light">近期 <span class="text-gold">公告</span></h2>
+                <p class="section-desc section-desc-light">掌握最新活動資訊與重要公告</p>
+            </div>
+            
+            <div class="announcement-grid" id="announcementGrid">
+                <!-- Announcements will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Edit Modal -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">📝 編輯公告</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="announcementForm">
+                <div class="form-group">
+                    <label class="form-label">公告標題</label>
+                    <input type="text" class="form-input" id="annTitle" placeholder="輸入公告標題" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">公告內容</label>
+                    <textarea class="form-textarea" id="annContent" placeholder="輸入公告內容" required></textarea>
+                </div>
+                <button type="submit" class="btn-save">新增公告</button>
+            </form>
+            <div class="existing-announcements" id="existingList">
+                <h4 style="color: var(--navy-200); margin-bottom: 1rem;">現有公告</h4>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="section contact">
         <div class="container">
@@ -1219,5 +1437,127 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Default announcements
+        const defaultAnnouncements = [
+            {
+                id: 1,
+                date: '2025-01-20',
+                title: '星脈聯盟正式啟動',
+                content: '整合旗下六大品牌資源，打造跨界生態平台，為大灣區企業提供一站式服務。'
+            },
+            {
+                id: 2,
+                date: '2025-01-15',
+                title: '珠海辦公室擴建完成',
+                content: '新辦公空間正式投入使用，歡迎各界夥伴蒞臨參觀交流。'
+            },
+            {
+                id: 3,
+                date: '2025-01-10',
+                title: '2025年度策略規劃發布',
+                content: '新一年將聚焦數位化轉型與跨境服務升級，持續深耕大灣區市場。'
+            }
+        ];
+
+        // Load announcements from localStorage or use defaults
+        function loadAnnouncements() {
+            const stored = localStorage.getItem('announcements');
+            return stored ? JSON.parse(stored) : defaultAnnouncements;
+        }
+
+        // Save announcements to localStorage
+        function saveAnnouncements(announcements) {
+            localStorage.setItem('announcements', JSON.stringify(announcements));
+        }
+
+        // Render announcements
+        function renderAnnouncements() {
+            const announcements = loadAnnouncements();
+            const grid = document.getElementById('announcementGrid');
+            grid.innerHTML = announcements.map(ann => `
+                <div class="announcement-card">
+                    <div class="announcement-date">📅 ${ann.date}</div>
+                    <h3 class="announcement-title">${ann.title}</h3>
+                    <p class="announcement-content">${ann.content}</p>
+                </div>
+            `).join('');
+        }
+
+        // Render existing list in modal
+        function renderExistingList() {
+            const announcements = loadAnnouncements();
+            const list = document.getElementById('existingList');
+            list.innerHTML = `
+                <h4 style="color: var(--navy-200); margin-bottom: 1rem;">現有公告</h4>
+                ${announcements.map(ann => `
+                    <div class="existing-item">
+                        <span style="color: #fff;">${ann.title}</span>
+                        <button class="btn-delete" onclick="deleteAnnouncement(${ann.id})">刪除</button>
+                    </div>
+                `).join('')}
+            `;
+        }
+
+        // Delete announcement
+        function deleteAnnouncement(id) {
+            const announcements = loadAnnouncements().filter(a => a.id !== id);
+            saveAnnouncements(announcements);
+            renderAnnouncements();
+            renderExistingList();
+        }
+
+        // Open modal
+        function openModal() {
+            document.getElementById('editModal').classList.add('active');
+            renderExistingList();
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('editModal').classList.remove('active');
+        }
+
+        // Key sequence detection for "00000000"
+        let keySequence = '';
+        document.addEventListener('keypress', function(e) {
+            keySequence += e.key;
+            if (keySequence.length > 8) {
+                keySequence = keySequence.slice(-8);
+            }
+            if (keySequence === '00000000') {
+                openModal();
+                keySequence = '';
+            }
+        });
+
+        // Form submission
+        document.getElementById('announcementForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('annTitle').value;
+            const content = document.getElementById('annContent').value;
+            const announcements = loadAnnouncements();
+            
+            const newAnn = {
+                id: Date.now(),
+                date: new Date().toISOString().split('T')[0],
+                title: title,
+                content: content
+            };
+            
+            announcements.unshift(newAnn);
+            saveAnnouncements(announcements);
+            renderAnnouncements();
+            renderExistingList();
+            
+            // Clear form
+            document.getElementById('annTitle').value = '';
+            document.getElementById('annContent').value = '';
+        });
+
+        // Initial render
+        renderAnnouncements();
+    </script>
 </body>
 </html>
