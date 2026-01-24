@@ -7,7 +7,7 @@ const navItems = [
   { label: "歷程", href: "#timeline" },
   { label: "事業", href: "#business" },
   { label: "公益", href: "#charity" },
-  { label: "聯繫", href: "#contact" },
+  { label: "動態", href: "#announcements" },
 ];
 
 const Navigation = () => {
