@@ -1417,6 +1417,10 @@
                     <input type="text" class="form-input" id="annTitle" placeholder="輸入公告標題" required>
                 </div>
                 <div class="form-group">
+                    <label class="form-label">活動日期</label>
+                    <input type="date" class="form-input" id="annDate" required>
+                </div>
+                <div class="form-group">
                     <label class="form-label">公告內容</label>
                     <textarea class="form-textarea" id="annContent" placeholder="輸入公告內容" required></textarea>
                 </div>
@@ -1536,12 +1540,13 @@
         document.getElementById('announcementForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const title = document.getElementById('annTitle').value;
+            const eventDate = document.getElementById('annDate').value;
             const content = document.getElementById('annContent').value;
             const announcements = loadAnnouncements();
             
             const newAnn = {
                 id: Date.now(),
-                date: new Date().toISOString().split('T')[0],
+                date: eventDate,
                 title: title,
                 content: content
             };
@@ -1553,6 +1558,7 @@
             
             // Clear form
             document.getElementById('annTitle').value = '';
+            document.getElementById('annDate').value = '';
             document.getElementById('annContent').value = '';
         });
 
